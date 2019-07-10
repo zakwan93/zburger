@@ -29,11 +29,13 @@ export const auth = (email, password, isSignUp) => {
       password: password,
       returnSecureToken: true
     };
-    let url =
-      "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=";
+    let url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${
+      process.env.REACT_APP_FIREBASE_API_KEY
+    }`;
     if (!isSignUp) {
-      url =
-        "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=";
+      url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${
+        process.env.REACT_APP_FIREBASE_API_KEY
+      }`;
     }
     axios
       .post(url, authData)
