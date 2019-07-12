@@ -11,7 +11,7 @@ import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import * as action from "../../store/actions/index";
 import axios from "../../axios-orders";
 
-class BurgerBuilder extends Component {
+export class BurgerBuilder extends Component {
   // Another way to set states
   // constructor(props){
   //     super(props);
