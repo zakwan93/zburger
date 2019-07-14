@@ -1,18 +1,17 @@
 .Button {
   background-color: transparent;
   border: none;
-  color: white;
   font-weight: bold;
   margin: 10px;
   padding: 10px;
   cursor: pointer;
   outline: none;
   font: inherit;
+  position: relative;
 }
 
 .Button:first-of-type {
   margin-left: 0;
-  padding-left: 0;
 }
 
 .Button:disabled {
@@ -24,6 +23,46 @@
   color: #5c9210;
 }
 
+.Success::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #5c9210;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.Success:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .Danger {
   color: #944317;
+}
+
+.Danger:hover {
+  color: #5c9210;
+}
+
+.Danger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #5c9210;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.Danger:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
